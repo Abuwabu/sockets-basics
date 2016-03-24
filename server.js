@@ -28,9 +28,11 @@ io.on('connection', function(socket) {
   socket.on('message', function (message) {
     console.log("Message received: " + message.text);
     
-    //sends to all users except sender
     // io.emit — to send to all
-    socket.broadcast.emit('message', message);
+    io.emit('message', message);
+    
+    //sends to all users except sender
+    // socket.broadcast.emit('message', message);
   });
   
   // message is a custom name
