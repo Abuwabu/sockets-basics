@@ -9,8 +9,14 @@ function localTime (timestamp) {
   return timestampMoment.local().format('h:mm a');
 }
 
+jQuery('.room-title').text(room);
+
 socket.on('connect', function () {
   console.log("Connected to socket.io server!");
+  socket.emit('joinRoom', {
+    name: name,
+    room: room
+  });
 });
 
 // Fires every time a new message comes in
