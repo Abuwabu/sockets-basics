@@ -42,7 +42,8 @@ io.on('connection', function(socket) {
   // message is a custom name
   // only get one argument — so use an object.
   socket.emit('message', {
-    text: "Welcome to the Chat Application!",
+    name: 'System',
+    text: 'Welcome to the Chat Application!',
     timestamp: moment().valueOf()
   });
 });
