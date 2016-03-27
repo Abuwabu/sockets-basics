@@ -31,7 +31,7 @@ console.log("Timestamp in seconds:" + now.format('X')); // in seconds
 console.log("Timestamp in milliseconds:" + now.format('x')); // in miliseconds
 
 // moment outputs strings
-console.log("now,format() returns a: " + typeof now.format('X'));
+console.log("now.format() returns a: " + typeof now.format('X'));
 
 // to output timestamp in ms as a number
 console.log("now.valueOf() returns a: " + typeof now.valueOf());

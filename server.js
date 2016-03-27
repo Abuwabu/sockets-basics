@@ -17,6 +17,10 @@ var PORT = process.env.PORT || 3000;
 var io = require('socket.io')(http);
 
 
+// ALL THE TIME
+var moment = require('moment');
+
+
 // STATIC
 app.use(express.static(__dirname + '/public'));
 
@@ -26,7 +30,7 @@ io.on('connection', function(socket) {
   console.log("User connected via socket.io!");
   
   socket.on('message', function (message) {
-    console.log("Message received: " + message.text);
+    console.log("Message received: " + message.text + " at: " + message.timestamp);
     
     // io.emit — to send to all
     io.emit('message', message);
@@ -38,7 +42,8 @@ io.on('connection', function(socket) {
   // message is a custom name
   // only get one argument — so use an object.
   socket.emit('message', {
-    text: "Welcome to the Chat Application!"
+    text: "Welcome to the Chat Application!",
+    timestamp: moment().valueOf()
   });
 });
 
