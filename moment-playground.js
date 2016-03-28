@@ -35,6 +35,8 @@ console.log("now.format() returns a: " + typeof now.format('X'));
 
 // to output timestamp in ms as a number
 console.log("now.valueOf() returns a: " + typeof now.valueOf());
+
+
 console.log(now.valueOf());
 console.log("\n");
 
@@ -43,7 +45,7 @@ console.log("*******************************");
 console.log("FORMATTING WITH UNIX TIMESTAMPS");
 console.log("*******************************");
 
-var timestamp = 1427390410911;
+var timestamp = 1427534939739;
 var timestampMoment = moment.utc(timestamp);
 
 console.log(timestampMoment.local().format('dddd, MMM Do YYYY, h:mm a'));
