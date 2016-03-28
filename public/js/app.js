@@ -21,11 +21,14 @@ socket.on('connect', function () {
 
 // Fires every time a new message comes in
 socket.on('message', function (message) {
+  var $message = jQuery('<li class="list-group-item"></li>');
+  
   console.log("New message: " + message.text);
   
-  jQuery('.messages')
+  $message
     .append('<p><strong>' + message.name + ' ' + localTime(message.timestamp) + '</strong></p>')
     .append('<p>' + message.text + '</p>');
+  jQuery('.messages').append($message);
 });
 
 // Handles submitting of new message
