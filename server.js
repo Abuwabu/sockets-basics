@@ -6,6 +6,16 @@
  * 
  * @requires      express
  * @requires      module:db
+ * 
+ * @todo          refactor
+ * @todo          JSDoc
+ * @todo          select a room from dropdown
+ * @todo          add remember-me functionality JWT
+ * @todo          message permanence on refresh
+ * @todo          secure — currently could send <script>alert("alert")</script>
+ * @todo          add avatars
+ * @todo          users have different colours to system (and maybe to each other)
+ * @todo          add 'user is typing feature'
  */
 
 
