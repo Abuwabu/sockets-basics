@@ -39,8 +39,7 @@ $form.on('submit', function (event) {
   
   socket.emit('message', {
     name: name,
-    text: $message.val(),
-    timestamp: moment().valueOf()
+    text: $message.val()
   });
   
   $message.val('');

@@ -93,7 +93,8 @@ io.on('connection', function(socket) {
     if (message.text === '@currentUsers') {
       sendCurrentUsers(socket);
     } else {
-      // message.timestamp = moment().valueOf();
+      message.timestamp = moment().valueOf();
+      
       // io.emit — to send to all users
       io.to(clientInfo[socket.id].room).emit('message', message);
     }
